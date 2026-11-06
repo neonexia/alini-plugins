@@ -10,12 +10,17 @@ description: Connect to Alini with no setup, create or join a workspace for a pi
 The helper ships inside this plugin at `runtime/cli.mjs` and needs Node.js 20 or
 newer. Below, `HELPER` stands for its absolute path:
 
-- If the `ALINI_PLUGIN_ROOT` environment variable is set (local builds and evaluation
-  runners), use `$ALINI_PLUGIN_ROOT/runtime/cli.mjs`.
 - In Claude Code, use `${CLAUDE_PLUGIN_ROOT}/runtime/cli.mjs`; Claude Code substitutes
   the installed plugin path when it loads this skill.
 - Otherwise (Codex and other harnesses), resolve `../../runtime/cli.mjs` against this
   skill's directory.
+- Only for local builds and evaluation runners that set the `ALINI_PLUGIN_ROOT`
+  environment variable, use `$ALINI_PLUGIN_ROOT/runtime/cli.mjs`.
+
+Write `HELPER` as a literal absolute path in every command, for example
+`node /path/to/plugin/runtime/cli.mjs ...`. Do not use shell variables, defaults
+such as `${VAR:-...}` or command substitution in the command: permission rules
+approve plain `node` commands, not shell expansions.
 
 ## Connect
 
