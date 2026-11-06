@@ -1,0 +1,109 @@
+Alini Developer License
+Version 1.0, November 2026
+
+Copyright (c) 2026 Neonexia. All rights reserved.
+
+This is a license agreement between you and Neonexia ("we", "us") for the Alini
+software: the Alini container images, Agent Services, gateway, command-line tools,
+software development kits, harness plugins and skills, and their documentation
+(together, the "Software"). By installing, running or otherwise using the Software,
+you agree to these terms. If you do not agree, do not use the Software. If you
+accept these terms for an organization, you confirm that you may bind it, and "you"
+includes that organization.
+
+1. License grant
+
+   Subject to these terms, we grant you a personal, non-exclusive,
+   non-transferable, non-sublicensable, revocable, royalty-free license to install
+   and run the Software, in object code form only, on computers you own or control,
+   solely for:
+
+   a. evaluating the Software;
+   b. developing, building and testing your own agents, applications and
+      integrations that use the Software; and
+   c. learning, research and personal, non-commercial projects.
+
+   You may use the Software for these purposes at your workplace, including to
+   evaluate it for your employer.
+
+2. Restrictions
+
+   Unless you have a separate written commercial agreement with us, you may not:
+
+   a. use the Software in production, meaning to run, support or deliver any
+      business operation, product or service other than the evaluation and
+      development uses in section 1;
+   b. make the Software, or its functionality, available to third parties,
+      including as a hosted, managed, shared or multi-user service;
+   c. deploy the Software for use by an organization beyond evaluation, including
+      on shared infrastructure, clusters or servers that people other than you rely
+      on;
+   d. copy, distribute, sell, lease, lend, sublicense or otherwise transfer the
+      Software, except that you may keep copies needed for the uses in section 1;
+   e. reverse engineer, decompile, disassemble, de-minify or otherwise attempt to
+      derive source code, algorithms, models or internal interfaces of the
+      Software, except to the extent applicable law expressly permits it despite
+      this restriction;
+   f. modify, adapt, translate or create derivative works of the Software, other
+      than configuration files and your own code that calls its public interfaces;
+   g. remove, alter or obscure any copyright, license or proprietary notice; or
+   h. circumvent any technical limitation of the Software, or use it to build a
+      competing product or service.
+
+   Your own agents, applications and data remain yours. This license does not grant
+   us any rights in them.
+
+3. Third-party components
+
+   The Software includes components licensed by third parties under their own
+   terms, including the Neond messaging platform (Apache License 2.0) and other
+   open-source software listed in the notices that accompany the Software. Those
+   components are governed by their own licenses, which this license does not
+   restrict.
+
+4. Commercial use
+
+   Production use, organizational deployment and the other uses restricted in
+   section 2 require a separate commercial license from us.
+
+5. Feedback
+
+   If you give us suggestions or feedback about the Software, we may use them
+   without obligation to you.
+
+6. Ownership
+
+   We and our licensors own the Software and all intellectual property rights in
+   it. We reserve all rights not expressly granted in this license.
+
+7. Updates and changes
+
+   We may release new versions of the Software under different terms. These terms
+   apply to the version they accompany.
+
+8. Termination
+
+   This license ends automatically if you breach it. We may also end it by notice
+   to you. When it ends, you must stop using the Software and delete your copies.
+   Sections 2, 5, 6 and 9 to 11 survive termination.
+
+9. No warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE, TITLE OR NON-INFRINGEMENT. THE SOFTWARE IS A PREVIEW AND MAY CONTAIN
+   ERRORS, LOSE DATA OR STOP WORKING.
+
+10. Limitation of liability
+
+   TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR ANY INDIRECT,
+   INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR ANY LOSS OF DATA,
+   PROFITS OR BUSINESS, ARISING OUT OF OR RELATED TO THE SOFTWARE OR THIS LICENSE,
+   AND OUR TOTAL LIABILITY WILL NOT EXCEED ONE HUNDRED US DOLLARS (US$100).
+
+11. General
+
+   You will comply with applicable export control and sanctions laws when using the
+   Software. If any provision of this license is unenforceable, the rest remains in
+   effect. This license is the entire agreement between you and us about its subject
+   matter, and it can be changed only in writing by us.

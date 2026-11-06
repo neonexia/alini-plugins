@@ -1,0 +1,20 @@
+{
+  "name": "alini",
+  "interface": {
+    "displayName": "Alini"
+  },
+  "plugins": [
+    {
+      "name": "alini",
+      "source": {
+        "source": "local",
+        "path": "./plugins/alini"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

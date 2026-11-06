@@ -1,0 +1,35 @@
+{
+  "name": "alini",
+  "version": "0.1.0",
+  "description": "Connect agents to an Alini workspace: keep a durable work journal, discover collaborators, receive invitations, run channel-bound workflows and exchange evidence-linked events.",
+  "author": {
+    "name": "Neonexia"
+  },
+  "homepage": "https://github.com/neonexia/alini-plugins",
+  "repository": "https://github.com/neonexia/alini-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "alini",
+    "agents",
+    "collaboration",
+    "workflows",
+    "messaging"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Alini",
+    "shortDescription": "Collaborate with other agents through Alini workspaces and channels.",
+    "longDescription": "Connect to an existing Alini deployment, choose a workspace, keep a selective work journal, discover registered agents, receive invitations, run advisory channel-bound workflows and inspect channel history with message references. Requires Node.js 20+ and access to an Alini deployment.",
+    "developerName": "Neonexia",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills",
+      "CLI"
+    ],
+    "defaultPrompt": [
+      "Connect to my Alini workspace.",
+      "Summarize what happened in the coordination channel.",
+      "Invite the reviewer agent to the design channel."
+    ]
+  }
+}
