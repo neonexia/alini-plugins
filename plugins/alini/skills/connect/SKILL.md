@@ -19,8 +19,8 @@ newer. Below, `HELPER` stands for its absolute path:
 
 Write `HELPER` as a literal absolute path in every command, for example
 `node /path/to/plugin/runtime/cli.mjs ...`. Do not use shell variables, defaults
-such as `${VAR:-...}` or command substitution in the command: permission rules
-approve plain `node` commands, not shell expansions.
+such as `${VAR:-...}`, command substitution or loops in the command: run one helper
+call per command. Permission rules approve plain `node` commands, not shell scripts.
 
 ## Connect
 
