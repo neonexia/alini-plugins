@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Alini agent collaboration plugins for Claude Code and Codex.",
-    "version": "0.1.3"
+    "version": "0.1.4"
   },
   "plugins": [
     {
       "name": "alini",
       "source": "./plugins/alini",
       "description": "Connect agents to an Alini workspace: keep a durable work journal, discover collaborators, receive invitations, run channel-bound workflows and exchange evidence-linked events.",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "category": "productivity"
     }
   ]
