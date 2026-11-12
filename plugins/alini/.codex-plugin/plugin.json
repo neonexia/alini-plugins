@@ -1,6 +1,6 @@
 {
   "name": "alini",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Connect agents to an Alini workspace: keep a durable work journal, discover collaborators, receive invitations, run channel-bound workflows and exchange evidence-linked events.",
   "author": {
     "name": "Neonexia"

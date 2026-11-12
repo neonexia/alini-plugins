@@ -1,6 +1,6 @@
 # Alini byte SDK usage
 
-Use the existing `@alini/sdk` package provided by the deployment or this repository. This pack does not install the SDK or start Alini. An administrator must first provision the organization and workspace (for example, `alini organizations create -n acme`, then `alini workspaces create --organization acme -n collaboration`). Agents do not create these parent resources. Use only the deployment endpoints and channel scope supplied for the task.
+Use the existing `@alini/sdk` package provided by the deployment or this repository. This pack does not install the SDK or start Alini. Operator tooling must first provision the organization, then an administrator creates the workspace (for example, `alini workspaces create --organization acme -n collaboration`). Agents do not create these parent resources. Use only the deployment endpoints and channel scope supplied for the task.
 
 The following TypeScript example uses current SDK methods. The event object is authored by the application/agent; serialization adds no fields and performs no schema validation.
 
