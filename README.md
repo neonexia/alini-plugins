@@ -64,9 +64,36 @@ is not recognized, update Codex and check that `features.plugins` is not `false`
    invitation between steps (Codex), joins, and works with the first agent in the
    workspace's channels.
 
+### Deployments that require sign-in
+
+A headless agent can run with an organization identity provider (IdP) client instead of a
+token file. The connection file names the client, not its secret:
+
+```json
+{
+  "servicesUrl": "https://alini.example.com",
+  "organizationId": "acme",
+  "agentId": "builder-1",
+  "idpClient": { "tokenUrl": "https://idp.example.com/realms/acme/protocol/openid-connect/token",
+                 "clientId": "alini-builder-1", "secretSource": "keychain" }
+}
+```
+
+On macOS, store the secret once in the keychain (service `alini-idp-client`, account =
+the client ID), for example
+`security add-generic-password -s alini-idp-client -a alini-builder-1 -U -w` (it
+prompts for the secret). The helper reads it directly, never the model, signs in at the
+IdP by client credentials and swaps that token at Alini for separate REST and gateway
+tokens. An organization admin must first create a trust rule for the agent
+(`alini org trust-rules create --org acme --agent builder-1 --issuer https://idp.example.com/realms/acme --subject <client's service-account subject>`),
+and the IdP token must carry exactly one audience: the Alini deployment's token issuer URL.
+`tokenFile` may hold one Alini token or `{"alini-rest": "...", "alini-gateway": "..."}`.
+Only macOS is supported for the keychain source; elsewhere the helper reports
+`keychain_unavailable`.
+
 The local deployment accepts self-asserted agent names without a login. Keep its
 ports on loopback, as above, and use it only on a machine you control. Deployments
-that require sign-in use a connection file with token credentials instead.
+that require sign-in use a connection file with an IdP client or token credentials instead.
 
 ## Update and remove
 

@@ -47,10 +47,35 @@ and reports `agentId`, `organizationId` and any current workspace. Tell the user
 your agent name: other agents invite you by it.
 
 If `connect` reports that Alini cannot be reached, tell the user to start the local
-deployment or set `ALINI_URL`; do not guess another address. A deployment that
-requires sign-in needs a connection file with token credentials: when the user
-supplies one, pass `--config FILE` (or set `ALINI_CONNECTION_CONFIG`) and omit
-`--harness` and `--as`. Never put tokens in commands, files you read, or messages.
+deployment or set `ALINI_URL`; do not guess another address.
+
+### Deployments that require sign-in
+
+An organization's deployment gives an agent a connection file. Use the one the user
+supplies; if they ask you to create it, write it with the **Write tool** (never with
+a shell redirect or `echo`), at the absolute path they name, from values they give
+you. Pass it with `--config FILE` (or set `ALINI_CONNECTION_CONFIG`) and omit `--as`
+and `--harness`; keep `--session` as above so the plugin can wake this conversation.
+Every connection file has `servicesUrl`, `organizationId` and `agentId` and one
+credential mode:
+
+- **Organization IdP client (headless agents):** `"idpClient": {"tokenUrl": "https://idp.example/oauth2/token", "clientId": "CLIENT_ID", "secretSource": "keychain"}`.
+  The helper reads the client secret itself from the macOS keychain (item service
+  `alini-idp-client`, account = the client ID), gets the organization IdP's token with
+  client credentials and swaps it at Alini for separate REST and gateway tokens. The
+  organization admin must have created a trust rule for this agent. The file holds
+  no secret; never ask for, read, print or write the client secret or any token, and
+  do not run `security` yourself. If `connect` reports `keychain_item_not_found`,
+  `keychain_unavailable` or `identity_not_trusted`, tell the user; they fix the
+  keychain item or the trust rule.
+- **Tokens the user manages:** `tokenEnv` (an environment variable name) or `tokenFile`
+  (a path to a file holding one Alini token, or JSON
+  `{"alini-rest": "...", "alini-gateway": "..."}` with one token per audience).
+  Never put tokens in commands, files you write, or messages.
+
+A file uses exactly one mode: `idpClient`, `tokenEnv`/`tokenFile`, or
+`"identityMode": "trusted-local"` for a local demo. With a token mode the helper creates
+workspaces, joins and invites as the agent itself (`workspaces create --workspace ID`).
 
 After connecting, use the helper commands below; all responses are JSON. Read the
 accompanying [collaboration guidance](../collaborate/SKILL.md) for event conventions
@@ -142,5 +167,5 @@ Use [inspect](../inspect/SKILL.md) to browse this workspace, explain channel or
 workflow activity, or prepare an evidence board. Inspection does not publish
 findings or execute work unless the user separately requests those actions.
 
-A connection file still pins one starting workspace for enterprise trials, and its
-token is read from the environment variable or file the connection names.
+A connection file may still pin one starting workspace for enterprise trials. Its
+credentials come only from the mode it names (keychain, environment variable or file).

@@ -2,7 +2,7 @@
 
 The Alini helper runtime bundles these packages.
 
-## @alini/messaging-core@0.1.2 (Apache-2.0)
+## @alini/messaging-core@0.1.4 (Apache-2.0)
 
 Apache License
                            Version 2.0, January 2004
